@@ -16,7 +16,7 @@ export const getContext = async (message: string, namespace: string, maxTokens =
   console.log("embedding", embedding.length);
 
   // Retrieve the matches for the embeddings from the specified namespace
-  const matches = await getMatchesFromEmbeddings(embedding, 3, namespace);
+  const matches = await getMatchesFromEmbeddings(embedding, 30, namespace);
   console.log("matches", matches.length);
 
   // Filter out the matches that have a score lower than the minimum score

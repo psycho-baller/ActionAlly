@@ -2,7 +2,7 @@
   "name": "journalgenius",
   "version": "0.1.0",
   "private": true,
-  "description": "JournalGenius, your personal companion for making the best of your journal notes.",
+  "description": "JournalGenius, your personal companion for making the best of your personal notes.",
   "author": "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)",
   "license": "MIT",
   "contributors": [

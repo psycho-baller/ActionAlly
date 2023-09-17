@@ -44,3 +44,4 @@ venv
 
 # my journal files
 api/docs/*
+api/daily/*

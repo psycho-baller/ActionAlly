@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 export interface ICard {
   pageContent: string;
   metadata: {
-    hash: string;
+    source: string;
   };
 }
 
@@ -15,18 +15,16 @@ interface ICardProps {
 
 export const Card: FC<ICardProps> = ({ card, selected }) => (
   <div
-    id={card.metadata.hash}
+    id={card.metadata.source}
     className={`card w-full p-5 m-2 text-white ${
-      selected && selected.includes(card.metadata.hash)
-        ? "bg-gray-600"
-        : "bg-gray-800"
+      selected && selected.includes(card.metadata.source) ? "bg-gray-600" : "bg-gray-800"
     } ${
-      selected && selected.includes(card.metadata.hash)
+      selected && selected.includes(card.metadata.source)
         ? "border-double border-4 border-sky-500"
         : "opacity-60 hover:opacity-80 transition-opacity duration-300 ease-in-out"
     }`}
   >
     <ReactMarkdown>{card.pageContent}</ReactMarkdown>
-    <b className="text-xs">{card.metadata.hash}</b>
+    <b className="text-xs">{card.metadata.source}</b>
   </div>
 );

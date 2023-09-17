@@ -82,7 +82,6 @@ async function embedDocument(doc: Document): Promise<Vector> {
       metadata: {
         // The metadata includes details about the document
         chunk: doc.pageContent, // The chunk of text that the vector represents
-        hash: doc.metadata.hash as string, // The hash of the document content
         source: doc.metadata.source as string,
         created: doc.metadata.created as string,
         lastModified: doc.metadata.lastModified as string,
