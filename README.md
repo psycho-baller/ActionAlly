@@ -62,11 +62,10 @@ const Chat: React.FC<Chat> = ({
           <input
             type="text"
             className="..."
+            placeholder="Talk to your journal..."
             value={input}
             onChange={handleInputChange}
           />
-
-          <span className="...">Press ⮐ to send</span>
         </form>
       </>
     </div>

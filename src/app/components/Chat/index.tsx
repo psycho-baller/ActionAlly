@@ -30,14 +30,11 @@ const Chat: React.FC<Chat> = ({
         >
           <input
             type="text"
+            placeholder="Talk to your journal..."
             className="w-full px-3 py-2 pl-3 pr-10 leading-tight text-gray-200 transition-shadow duration-200 bg-gray-600 border border-gray-600 rounded appearance-none input-glow focus:outline-none focus:shadow-outline"
             value={input}
             onChange={handleInputChange}
           />
-
-          <span className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 pointer-events-none">
-            Press ⮐ to send
-          </span>
         </form>
       </>
     </div>
