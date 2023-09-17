@@ -10,8 +10,8 @@ export async function getEmbeddings(input: string) {
   try {
     const response = await openai.createEmbedding({
       model: "text-embedding-ada-002",
-      input: input.replace(/\n/g, ' ')
-    })
+      input: input.replace(/\n/g, " "), // Remove newlines
+    });
 
     const result = await response.json();
     return result.data[0].embedding as number[]
