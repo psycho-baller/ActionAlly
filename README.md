@@ -1,4 +1,4 @@
-# Journal Genius
+# Journal Genius - where introspection meets actionable wisdom
 
 ![logo](/docs/wide-logo.png)
 
