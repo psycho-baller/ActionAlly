@@ -41,3 +41,6 @@ next-env.d.ts
 # python
 __pycache__/
 venv
+
+# my journal files
+api/docs/*

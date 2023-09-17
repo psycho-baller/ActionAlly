@@ -1,7 +1,13 @@
 {
-  "name": "vercel-pinecone-template",
+  "name": "journalgenius",
   "version": "0.1.0",
   "private": true,
+  "description": "JournalGenius, your personal companion for making the best of your journal notes.",
+  "author": "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)",
+  "license": "MIT",
+  "contributors": [
+    "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)"
+  ],
   "scripts": {
     "dev:fastapi": "pip3 install -r requirements.txt && python3 -m uvicorn api.main:app --reload",
     "dev:next": "next dev",
