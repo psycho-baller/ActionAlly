@@ -9,7 +9,7 @@
     "Rami <rami.rami@ucalgary.ca> (ramimaalouf.tech)"
   ],
   "scripts": {
-    "dev:fastapi": "pip3 install -r requirements.txt && python3 -m uvicorn api.main:app --reload",
+    "dev:fastapi": "pip3 install -r requirements.txt && python3 -m uvicorn api.index:app --reload",
     "dev:next": "next dev",
     "dev": "concurrently \"yarn dev:next\" \"yarn dev:fastapi\"",
     "build": "next build",
