@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPineconeClient } from "../../../lib/pinecone";
+import { getPineconeClient } from "@/lib/pinecone";
 
 export async function POST(req: Request) {
   const pinecone = await getPineconeClient()

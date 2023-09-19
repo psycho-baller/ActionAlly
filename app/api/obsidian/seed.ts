@@ -1,20 +1,10 @@
-import { getEmbeddings } from "../../../lib/embeddings";
+import { getEmbeddings } from "@/lib/embeddings";
 import { Document, MarkdownTextSplitter, RecursiveCharacterTextSplitter } from "@pinecone-database/doc-splitter";
 import { utils as PineconeUtils, Vector } from "@pinecone-database/pinecone";
 import md5 from "md5";
-import { getPineconeClient } from "../../../lib/pinecone";
-// import { Crawler, Page } from "./crawler";
-import { truncateStringByBytes } from "../../../lib/truncateString";
+import { getPineconeClient } from "@/lib/pinecone";
 
 const { chunkedUpsert, createIndexIfNotExists } = PineconeUtils;
-
-interface SeedOptions {
-  splittingMethod: string;
-  chunkSize: number;
-  chunkOverlap: number;
-}
-
-type DocumentSplitter = RecursiveCharacterTextSplitter | MarkdownTextSplitter;
 
 async function seed(indexName: string) {
   try {

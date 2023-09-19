@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai-edge'
 import { Message, OpenAIStream, StreamingTextResponse } from 'ai'
-import { getContext } from "../../../lib/context";
+import { getContext } from "@/lib/context";
 
 // Create an OpenAI API client (that's edge friendly!)
 const config = new Configuration({
