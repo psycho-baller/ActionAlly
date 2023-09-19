@@ -1,18 +1,16 @@
-import { IUrlEntry } from "./UrlButton";
-import { ICard } from "./Card";
+import { type IUrlEntry } from "../components/UrlButton";
+import { type Dispatch, type SetStateAction } from "react";
 
 export async function crawlDocument(
   url: string,
-  setEntries: React.Dispatch<React.SetStateAction<IUrlEntry[]>>,
-  setCards: React.Dispatch<React.SetStateAction<ICard[]>>,
+  setEntries: Dispatch<SetStateAction<IUrlEntry[]>>,
+  setCards: Dispatch<SetStateAction<unknown[]>>,
   splittingMethod: string,
   chunkSize: number,
   overlap: number
 ): Promise<void> {
   setEntries((seeded: IUrlEntry[]) =>
-    seeded.map((seed: IUrlEntry) =>
-      seed.url === url ? { ...seed, loading: true } : seed
-    )
+    seeded.map((seed: IUrlEntry) => (seed.url === url ? { ...seed, loading: true } : seed))
   );
   const response = await fetch("/api/crawl", {
     method: "POST",
@@ -32,15 +30,13 @@ export async function crawlDocument(
   setCards(documents);
 
   setEntries((prevEntries: IUrlEntry[]) =>
-    prevEntries.map((entry: IUrlEntry) =>
-      entry.url === url ? { ...entry, seeded: true, loading: false } : entry
-    )
+    prevEntries.map((entry: IUrlEntry) => (entry.url === url ? { ...entry, seeded: true, loading: false } : entry))
   );
 }
 
 export async function clearIndex(
-  setEntries: React.Dispatch<React.SetStateAction<IUrlEntry[]>>,
-  setCards: React.Dispatch<React.SetStateAction<ICard[]>>
+  setEntries: Dispatch<SetStateAction<IUrlEntry[]>>,
+  setCards: Dispatch<SetStateAction<unknown[]>>
 ) {
   const response = await fetch("/api/clearIndex", {
     method: "POST",
@@ -58,3 +54,8 @@ export async function clearIndex(
     setCards([]);
   }
 }
+
+export const truncateStringByBytes = (str: string, bytes: number) => {
+  const enc = new TextEncoder();
+  return new TextDecoder("utf-8").decode(enc.encode(str).slice(0, bytes));
+};

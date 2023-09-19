@@ -1,10 +1,10 @@
-import { getEmbeddings } from "@/utils/embeddings";
+import { getEmbeddings } from "../../../lib/embeddings";
 import { Document, MarkdownTextSplitter, RecursiveCharacterTextSplitter } from "@pinecone-database/doc-splitter";
 import { utils as PineconeUtils, Vector } from "@pinecone-database/pinecone";
 import md5 from "md5";
-import { getPineconeClient } from "@/utils/pinecone";
+import { getPineconeClient } from "../../../lib/pinecone";
 // import { Crawler, Page } from "./crawler";
-import { truncateStringByBytes } from "@/utils/truncateString";
+import { truncateStringByBytes } from "../../../lib/truncateString";
 
 const { chunkedUpsert, createIndexIfNotExists } = PineconeUtils;
 

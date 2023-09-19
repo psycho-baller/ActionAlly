@@ -1,4 +1,4 @@
-import React from "react";
+import { type FC } from "react";
 import { AiFillGithub } from "react-icons/ai";
 
 interface InstructionModalProps {
@@ -6,10 +6,7 @@ interface InstructionModalProps {
   onClose: () => void;
 }
 
-const InstructionModal: React.FC<InstructionModalProps> = ({
-  isOpen,
-  onClose,
-}) => {
+const InstructionModal: FC<InstructionModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -37,12 +34,13 @@ const InstructionModal: React.FC<InstructionModalProps> = ({
         </p>
         <br />
         <p>
-          In the next phase of Journal Genius, we're dedicated to enhancing the model's ability to communicate, creating
-          an experience that feels remarkably human-to-human. We aim to imbue the generated takeaways with a natural,
-          empathetic touch, fostering a deeper connection between the user and the insights provided. Ultimately, we
-          envision a seamless process where users can effortlessly engage with Journal Genius, simplifying and
-          automating the interaction to the point where a simple call to the Language Learning Model (LLM) becomes
-          second nature, ensuring that the journey towards self-improvement is as intuitive and enriching as possible
+          In the next phase of Journal Genius, we&apos;re dedicated to enhancing the model&apos;s ability to
+          communicate, creating an experience that feels remarkably human-to-human. We aim to imbue the generated
+          takeaways with a natural, empathetic touch, fostering a deeper connection between the user and the insights
+          provided. Ultimately, we envision a seamless process where users can effortlessly engage with Journal Genius,
+          simplifying and automating the interaction to the point where a simple call to the Language Learning Model
+          (LLM) becomes second nature, ensuring that the journey towards self-improvement is as intuitive and enriching
+          as possible
         </p>
       </div>
       <div

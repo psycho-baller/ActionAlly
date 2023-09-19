@@ -2,15 +2,13 @@
 
 "use client";
 
-import React, { useEffect, useRef, useState, FormEvent } from "react";
-import { Context } from "@/components/Context";
-import Header from "@/components/Header";
-import Chat from "@/components/Chat";
+import { type FC, useEffect, useRef, useState, FormEvent } from "react";
+import Chat from "../components/Chat";
 import { useChat } from "ai/react";
-import InstructionModal from "./components/InstructionModal";
+import InstructionModal from "../components/InstructionModal";
 import { AiFillGithub, AiOutlineInfoCircle } from "react-icons/ai";
 
-const Page: React.FC = () => {
+const Page: FC = () => {
   const [gotMessages, setGotMessages] = useState(false);
   const [context, setContext] = useState<string[] | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);

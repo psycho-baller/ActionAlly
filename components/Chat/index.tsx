@@ -1,6 +1,6 @@
 // Chat.tsx
 
-import React, { FormEvent, ChangeEvent } from "react";
+import {type FC, FormEvent, ChangeEvent } from "react";
 import Messages from "./Messages";
 import { Message } from "ai/react";
 
@@ -11,7 +11,7 @@ interface Chat {
   messages: Message[];
 }
 
-const Chat: React.FC<Chat> = ({
+const Chat: FC<Chat> = ({
   input,
   handleInputChange,
   handleMessageSubmit,
