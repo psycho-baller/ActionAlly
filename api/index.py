@@ -5,7 +5,7 @@ app = FastAPI(docs_url="/api/py/docs", openapi_url="/api/py/openapi.json")
 
 @app.get("/api/py/healthcheck")
 def healthchecker():
-    return {"status": "success", "message": "Integrated FastAPI Framework with Next.js and chrome extension successfully!"}
+    return {"status": "success", "message": "Integrated FastAPI Framework with Next.js!"}
 
 # Works only in my machine coz I have the notes in my machine
 @app.get("/api/py/notes")
